@@ -1,4 +1,5 @@
-import React from "react";
+import { connect } from "react-redux"
+import React from "react"
 import {
   View,
   Image,
@@ -10,32 +11,52 @@ import {
   TextInput,
   StyleSheet,
   ScrollView
-} from "react-native";
-import DateTimePicker from 'react-native-datepicker';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import Slider from '@react-native-community/slider';
-import { CheckBox } from 'react-native-elements';
-import {SlideMenuIcon} from '../../../navigator/slideMenuIcon';
+} from "react-native"
+import DateTimePicker from "react-native-datepicker"
+import Icon from "react-native-vector-icons/FontAwesome"
+import Slider from "@react-native-community/slider"
+import { CheckBox } from "react-native-elements"
+import { SlideMenuIcon } from "../../../navigator/slideMenuIcon"
 
-export default class Blank extends React.Component {
-  static navigationOptions = ({navigation}) => {
-    return {
-      headerLeft: <SlideMenuIcon navigationProps={navigation} />,
-    };
-  };
-  
-  state = {};
+class Blank extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
+  static navigationOptions = ({ navigation }) => {
+    return { headerLeft: <SlideMenuIcon navigationProps={navigation} /> }
+  }
 
   render = () => (
-    <View style={styles.container}>
-      <Text>This is your new component</Text>
+    <View style={styles.View_1}>
+      <Text style={styles.Text_3}>😊Ciao!😊</Text>
+      <Button
+        title="Premimi"
+        color="#ff0000"
+        style={styles.Button_5}
+        onPress={() => alert("Pressed!")}
+      />
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginHorizontal: 16,
+  View_1: { backgroundColor: "#00ff91" },
+  Text_3: {
+    paddingTop: 10,
+    paddingBottom: 10,
+    alignSelf: "center",
+    fontSize: 26,
+    color: "#05570a",
+    backgroundColor: "#00ff91",
+    fontWeight: "bold"
   },
-});
+  Button_5: { alignSelf: "center", color: "#ffffff" }
+})
+const mapStateToProps = state => {
+  return {}
+}
+const mapDispatchToProps = () => {
+  return {}
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Blank)
