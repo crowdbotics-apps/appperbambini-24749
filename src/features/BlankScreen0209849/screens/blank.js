@@ -21,6 +21,7 @@ import { SlideMenuIcon } from "../../../navigator/slideMenuIcon"
 class Blank extends React.Component {
   constructor(props) {
     super(props)
+
     this.state = {}
   }
   static navigationOptions = ({ navigation }) => {
@@ -31,7 +32,7 @@ class Blank extends React.Component {
     <View style={styles.View_1}>
       <Text style={styles.Text_3}>😊Ciao!😊</Text>
       <Button
-        title="Premimi"
+        title="Premimi!"
         color="#ff0000"
         style={styles.Button_5}
         onPress={() => alert("Pressed!")}
@@ -53,10 +54,13 @@ const styles = StyleSheet.create({
   },
   Button_5: { alignSelf: "center", color: "#ffffff" }
 })
+
 const mapStateToProps = state => {
   return {}
 }
+
 const mapDispatchToProps = () => {
   return {}
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(Blank)
